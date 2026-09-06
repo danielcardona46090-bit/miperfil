@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=+, initial-scale=1.0">
+    <title>Mi perfil</title>
+
+    <meta name="description" 
+    content="Perfil de Daniel Cardona, estudiante de Tecnología en Sistemas Informáticos 
+    de la Universidad de Caldas.">
+
+    <meta property="og:title" content ="Mi perfil">
+    <meta property="og:description" content="perfil de Daniel Cardona">
+    <meta property="og:image" content="img\images.jpg">
+    <meta property="og:type" content="website">
+</head>
+<body>
+    <header>
+        <h1>Daniel Cardona</h1>
+        <p>estudiante de tecnologia en sistemas informaticos de la universidad de caldas</p>
+    </header>
+
+        <nav>
+            <ul>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+
+    <main>
+        <section id="sobre-mi">
+            <h2>Sobre mí</h2>
+            <p>Soy estudiante de tecnología en sistemas informáticos de la universidad de caldas, 
+                me gusta aprender sobre desarrollo web y programación en general.</p>
+        </section>
+        <figure>
+            <img src="img\images.jpg" alt="foto de daniel cardona" width="300"
+    height="300">
+            <figcaption>foto Daniel Cardona</figcaption>
+        </figure>
+
+        <section id="formacion">
+            <table border="1">
+                <caption>Formación académica</caption>
+                <thead>
+                    <tr><th>Institución</th><th>Programa</th><th>Año</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Universidad de Caldas</td><td>Tecnología en Sistemas Informáticos</td><td>2025-2026</td></tr>
+                </tbody>
+        </section>
+
+        <section id="habilidades">
+            <h2>habilidades</h2>
+            <ul>
+                <li>html</li>
+                <li>java</li>
+                <li>css</li>
+            </ul>
+            <br>
+            <ol>
+                <li>aprender a crear un pagina desde cero y funcinal</li>
+                <li>trabajar mi logica logica de programacion</li>
+                <li>aprender a subir mi pagina a la web</li>
+            </ol>
+        </section>
+
+        <section id="contacto">
+            <form action="enviar.php" method="post">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required minlength="2">
+                <br>
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
+                <br>
+                <label for="asunto">Asunto:</label>
+                <select id="asunto" name="asunto">
+                    <option value="consulta">Consulta</option>
+                    <option value="sugerencia">Sugerencia</option>
+                    <option value="otro">Otro</option>
+                </select>
+                <br>
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" required minlength="10"></textarea>
+                <br>
+                <label for="aceptar">
+                    <input type="checkbox" id="aceptar" name="aceptar" required>
+                    Acepto los términos y condiciones
+                </label>
+                <button type="submit">Enviar</button>
+            </form>
+                
+
+        </section>
+    </main>
+
+    <footer>
+        <p>CORREO: daniel.cardona@uadc.edu.co</p>
+        <p>2026</p>
+    </footer>
+
+</body>
+</html>
