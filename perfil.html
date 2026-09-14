@@ -13,6 +13,8 @@
     <meta property="og:description" content="perfil de Daniel Cardona">
     <meta property="og:image" content="img\images.jpg">
     <meta property="og:type" content="website">
+
+<link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
     <header>
@@ -28,7 +30,7 @@
         </nav>
 
     <main>
-        <section id="sobre-mi">
+        <section class="tarjeta" id="sobre-mi">
             <h2>Sobre mí</h2>
             <p>Soy estudiante de tecnología en sistemas informáticos de la universidad de caldas, 
                 me gusta aprender sobre desarrollo web y programación en general.</p>
@@ -39,8 +41,8 @@
             <figcaption>foto Daniel Cardona</figcaption>
         </figure>
 
-        <section id="formacion">
-            <table border="1">
+        <section class="tarjeta"id="formacion">
+            <table>
                 <caption>Formación académica</caption>
                 <thead>
                     <tr><th>Institución</th><th>Programa</th><th>Año</th></tr>
@@ -50,7 +52,7 @@
                 </tbody>
         </section>
 
-        <section id="habilidades">
+        <section class="tarjeta"id="habilidades">
             <h2>habilidades</h2>
             <ul>
                 <li>html</li>
@@ -65,7 +67,7 @@
             </ol>
         </section>
 
-        <section id="contacto">
+        <section class="tarjeta" id="contacto">
             <form action="enviar.php" method="post">
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" required minlength="2">
