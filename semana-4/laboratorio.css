@@ -1,0 +1,86 @@
+ body { font-family: system-ui, sans-serif; padding: 1.5rem; }
+    h2 { margin-top: 2.5rem; }
+    .tarjeta { background: #4f46e5; color: #fff; padding: 1rem; border-radius: 8px; }
+    .caja    { background: #3b82f6; color: #fff; padding: 1rem; border-radius: 8px; }
+    section  { border: 2px dashed #94a3b8; padding: 10px; }
+
+    /* ===== EXPERIMENTO 1: la última fila ===== */
+    .con-flex { display: flex; flex-wrap: wrap; gap: 16px; }
+    .con-flex .tarjeta { flex: 1 1 250px; }
+
+    .con-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+
+    /* ===== EXPERIMENTO 2: el eje que se voltea ===== */
+    .ejes {
+      display: flex;
+      min-height: 300px;
+      gap: 12px;
+      justify-content: center;
+      align-items: flex-end;
+      flex-direction: column; 
+    }
+
+    /* ===== EXPERIMENTO 3: la palabra que rompe el layout ===== */
+    /* Pruébalas UNA POR UNA sobre .con-grid .tarjeta y compara:   */
+    .con-grid .tarjeta { min-width: 0; }                        
+    .con-grid .tarjeta { overflow-wrap: break-word; }           
+    .con-grid .tarjeta { overflow: hidden; }                    
+
+    /* ===== EXPERIMENTO 4: mover cosas sin tocar el HTML ===== */
+    .pagina {
+      display: grid;
+      gap: 10px;
+      min-height: 320px;
+      grid-template-columns: 1fr 200px;
+      grid-template-rows: auto 1fr auto;
+      grid-template-areas:
+        "cabecera cabecera"
+        "lateral  contenido"
+        "pie      pie";
+      /* PASO 4: inviértelo (lateral a la derecha) y luego apílalo (lateral arriba) */
+    }
+
+      .pagina {
+      display: grid;
+      gap: 10px;
+      min-height: 320px;
+      grid-template-columns: 1fr ;
+      grid-template-rows: auto auto 1fr auto;
+      grid-template-areas:
+        "cabecera cabecera"
+        "lateral  contenido"
+        "pie      pie";
+      /* PASO 4: inviértelo (lateral a la derecha) y luego apílalo (lateral arriba) */
+    }
+
+    .pagina > header { grid-area: cabecera; }
+    .pagina > aside  { grid-area: lateral; }
+    .pagina > main   { grid-area: contenido; }
+    .pagina > footer { grid-area: pie; }
+    .pagina > * { background: #eef2ff; border: 1px solid #c7d2fe; padding: 1rem; }
+
+    /* ===== EXPERIMENTO 5: gap vs margin ===== */
+    .con-margin { display: flex; flex-wrap: wrap; }
+    .con-margin .tarjeta { flex: 1 1 200px; margin: 8px; }
+
+    .con-gap { display: flex; flex-wrap: wrap; gap: 16px; }
+    .con-gap .tarjeta { flex: 1 1 200px; }
+
+    /*RESPUESTAS EXPERIMENTOS
+
+    1.En Flex se agrandan para llenar el espacio. En Grid mantienen el mismo tamaño,
+    y la que mejor alinea las columnas es el grid,el flex lo usaria como para menus o 
+    como para botones
+
+    2.Antes lo hacía justify-conten; después de flex-direction: column lo hace align-items
+    justify-conten trabaja sobre el eje principal y align-items sobre el eje secundario.
+
+    3.una palabra larga rompe el layout, ya que no hay un límite de ancho y se sale del contenedor
+    la mejor solucion para mi es overflow-wrap: break-word, porque divide la palabra sin ocultarla
+
+    4. solo toque para cambiar el nav de la targeta 7 y Sería más complicado y habría que mover los 
+    elementos manualmente, mientras que con Grid solo cambias el CSS.
+
+    5. Con gap el espacio solo queda entre las tarjetas; con margin también aparece espacio en el borde
+     de afuera, y la margin es la que obiga ha ahcer exepciones porque a veces hay que quitar el margen 
+     del primer y del último elemento.
